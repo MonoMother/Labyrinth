@@ -1,47 +1,23 @@
 package org.example;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 public class Main {
     public static void main(String[] args) {
-
-        final String DB_URL = "jdbc:mysql://localhost:3306/mydatabase";
-        final String USERNAME = "username";
-        final String PASSWORD = "password";
-
+        //количество столбцов и строк в лабиринте
+        int lines = 10, columns = 10;
+        //процент разреженности лабиринта
+        int fullness = 20;
 
         Labyrinth labyrinth = new Labyrinth();
-        char[][] arr = labyrinth.generateLabyrinth(10, 10, 20);
+        char[][] arr = labyrinth.generateLabyrinth(lines, columns, fullness);
         labyrinth.printLabyrinth(arr);
 
-        labyrinth.DFSearch(arr, 10, 10);
+        labyrinth.DFSearch(arr, lines, columns);
         labyrinth.printLabyrinth(arr);
 
         labyrinth.cleanLabyrinth(arr);
 
-        labyrinth.BFSearch(arr, 10, 10);
+        labyrinth.BFSearch(arr, lines, columns);
         labyrinth.printLabyrinth(arr);
 
-        try (Connection connection = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD)) {
-            // Создаем подготовленное выражение для вставки данных в таблицу
-            String sql = "INSERT INTO mytable (value) VALUES (?)";
-            PreparedStatement statement = connection.prepareStatement(sql);
 
-            // Проходимся по всем элементам массива и записываем их в базу данных
-            for (char[] row : arr) {
-                for (int value : row) {
-                    statement.setInt(1, value);
-                    statement.executeUpdate();
-                }
-            }
-
-            System.out.println("Данные успешно записаны в базу данных.");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
     }
