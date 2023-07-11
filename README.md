@@ -19,5 +19,6 @@
 БД вести в процессе прохождения.
 
 Программа запускается по пути labyrinth/src/main/java/org/example/Main.java
+
 Пример сгенерированного лабиринта:
 ![image](https://github.com/MonoMother/Labyrinth/assets/92880982/94c3c551-9e6a-45b6-ae62-fdb421e68a83)
