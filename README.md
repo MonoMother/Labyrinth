@@ -23,3 +23,13 @@
 Пример сгенерированного лабиринта:
 
 ![image](https://github.com/MonoMother/Labyrinth/assets/92880982/94c3c551-9e6a-45b6-ae62-fdb421e68a83)
+
+Прохождение лабиринта DF поиском: 
+
+![image](https://github.com/MonoMother/Labyrinth/assets/92880982/087dc995-bdb2-4305-bf67-e03e7e5ae44e)
+
+Прохождение лабиринта BF поиском:
+
+![image](https://github.com/MonoMother/Labyrinth/assets/92880982/182112d6-085a-4619-b9eb-fc75423c3e27)
+
+
